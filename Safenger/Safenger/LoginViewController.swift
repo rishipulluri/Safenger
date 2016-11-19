@@ -17,6 +17,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         view.addSubview(loginButton)
         loginButton.frame = CGRect(x: 16, y: view.frame.height/2, width: view.frame.width - 32, height: 50)
         loginButton.delegate = self
+        
+        if let token = FBSDKAccessToken.current() {
+            print(token.tokenString)
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -28,14 +32,49 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     
+    func fetchProfile() {
+        print("fetch profile")
+        let profileEndpoints = ["fields":"email, first_name, last_name, picture.type(large)"]
+        FBSDKGraphRequest(graphPath: "me", parameters: profileEndpoints).start {(connection, result, error) -> Void in
+            var result = result as! NSDictionary
+
+            if (error != nil) {
+                
+                print(error)
+            }
+            
+            
+           
+            if let first_name = result["first_name"] as? String {
+                print(first_name)
+            }
+            if let last_name = result["last_name"] as? String {
+                print(last_name)
+            }
+            if let picture = result["picture"] as? NSDictionary {
+                if let data = picture["data"] as? NSDictionary {
+                    if let url = data["url"] as? String {
+                        print(url)
+                    }
+                }
+            }
+            
+            
+        }
+        
+    }
+    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!){
         if (error != nil) {
             print(error)
             return
+
         }
-        performSegue(withIdentifier: "loginSegue", sender: self)
-        print("Logged in successfully")
+        fetchProfile()
+
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
