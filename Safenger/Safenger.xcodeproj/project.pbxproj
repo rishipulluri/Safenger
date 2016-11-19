@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147597F51DE0FEFC0033E32F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597F41DE0FEFC0033E32F /* HomeViewController.swift */; };
 		14DB1FD71DE0E9A8008E1BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */; };
 		14DB1FDC1DE0E9A8008E1BAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDA1DE0E9A8008E1BAB /* Main.storyboard */; };
 		14DB1FDE1DE0E9A8008E1BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		147597F41DE0FEFC0033E32F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		14DB1FD31DE0E9A8008E1BAB /* Safenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Safenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14DB1FDB1DE0E9A8008E1BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */,
+				147597F41DE0FEFC0033E32F /* HomeViewController.swift */,
 				14DB1FDA1DE0E9A8008E1BAB /* Main.storyboard */,
 				14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */,
 				14DB1FDF1DE0E9A8008E1BAB /* LaunchScreen.storyboard */,
@@ -184,7 +187,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FA0FCB4F0614B7C8D2693C6D /* [CP] Copy Pods Resources */ = {
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14DB1FD71DE0E9A8008E1BAB /* AppDelegate.swift in Sources */,
+				147597F51DE0FEFC0033E32F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
