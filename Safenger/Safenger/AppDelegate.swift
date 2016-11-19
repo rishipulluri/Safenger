@@ -13,11 +13,19 @@ import FBSDKCoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var dict_users: NSMutableDictionary = NSMutableDictionary()
+
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirectoryPath = paths[0] as String
+        let plistFilePathInDocumentDirectory = documentDirectoryPath + "/Users.plist"
+        let dictionaryFromFile: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: plistFilePathInDocumentDirectory)
+        dict_users = dictionaryFromFile!
         return true
     }
     
@@ -27,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return handled
     }
     func applicationWillResignActive(_ application: UIApplication) {
+        
+        
+        
         
         
     }

@@ -58,6 +58,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     }
                 }
             }
+            let sotryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard?.instantiateViewController(withIdentifier: "PotentialHarassmentViewController") as! PotentialHarassmentViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            
             
             
         }
