@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		147597F51DE0FEFC0033E32F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597F41DE0FEFC0033E32F /* HomeViewController.swift */; };
 		147597F71DE10B2E0033E32F /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597F61DE10B2E0033E32F /* DataTableViewCell.swift */; };
+		147597F91DE114E10033E32F /* PotentialHarassmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597F81DE114E10033E32F /* PotentialHarassmentViewController.swift */; };
+		147597FB1DE115040033E32F /* SafeUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597FA1DE115040033E32F /* SafeUserViewController.swift */; };
 		14DB1FD71DE0E9A8008E1BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */; };
 		14DB1FDC1DE0E9A8008E1BAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDA1DE0E9A8008E1BAB /* Main.storyboard */; };
 		14DB1FDE1DE0E9A8008E1BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		147597F41DE0FEFC0033E32F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		147597F61DE10B2E0033E32F /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
+		147597F81DE114E10033E32F /* PotentialHarassmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotentialHarassmentViewController.swift; sourceTree = "<group>"; };
+		147597FA1DE115040033E32F /* SafeUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeUserViewController.swift; sourceTree = "<group>"; };
 		14DB1FD31DE0E9A8008E1BAB /* Safenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Safenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14DB1FDB1DE0E9A8008E1BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 				147597F41DE0FEFC0033E32F /* HomeViewController.swift */,
 				147597F61DE10B2E0033E32F /* DataTableViewCell.swift */,
 				D1CF71B01DE0FDD20010FABD /* LoginViewController.swift */,
+				147597F81DE114E10033E32F /* PotentialHarassmentViewController.swift */,
+				147597FA1DE115040033E32F /* SafeUserViewController.swift */,
 				14DB1FDA1DE0E9A8008E1BAB /* Main.storyboard */,
 				14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */,
 				14DB1FDF1DE0E9A8008E1BAB /* LaunchScreen.storyboard */,
@@ -225,7 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147597FB1DE115040033E32F /* SafeUserViewController.swift in Sources */,
 				D1CF71B11DE0FDD20010FABD /* LoginViewController.swift in Sources */,
+				147597F91DE114E10033E32F /* PotentialHarassmentViewController.swift in Sources */,
 				14DB1FD71DE0E9A8008E1BAB /* AppDelegate.swift in Sources */,
 				147597F51DE0FEFC0033E32F /* HomeViewController.swift in Sources */,
 				147597F71DE10B2E0033E32F /* DataTableViewCell.swift in Sources */,
@@ -272,6 +280,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -321,6 +330,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
