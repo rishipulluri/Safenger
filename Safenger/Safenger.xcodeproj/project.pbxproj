@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		147597F51DE0FEFC0033E32F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597F41DE0FEFC0033E32F /* HomeViewController.swift */; };
+		147597F71DE10B2E0033E32F /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597F61DE10B2E0033E32F /* DataTableViewCell.swift */; };
 		14DB1FD71DE0E9A8008E1BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */; };
 		14DB1FDC1DE0E9A8008E1BAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDA1DE0E9A8008E1BAB /* Main.storyboard */; };
 		14DB1FDE1DE0E9A8008E1BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		147597F41DE0FEFC0033E32F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		147597F61DE10B2E0033E32F /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		14DB1FD31DE0E9A8008E1BAB /* Safenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Safenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14DB1FDB1DE0E9A8008E1BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,8 +69,9 @@
 				D1CF71B21DE0FF8E0010FABD /* Safenger.entitlements */,
 				14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */,
 				147597F41DE0FEFC0033E32F /* HomeViewController.swift */,
-				14DB1FDA1DE0E9A8008E1BAB /* Main.storyboard */,
+				147597F61DE10B2E0033E32F /* DataTableViewCell.swift */,
 				D1CF71B01DE0FDD20010FABD /* LoginViewController.swift */,
+				14DB1FDA1DE0E9A8008E1BAB /* Main.storyboard */,
 				14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */,
 				14DB1FDF1DE0E9A8008E1BAB /* LaunchScreen.storyboard */,
 				14DB1FE21DE0E9A8008E1BAB /* Info.plist */,
@@ -225,6 +228,7 @@
 				D1CF71B11DE0FDD20010FABD /* LoginViewController.swift in Sources */,
 				14DB1FD71DE0E9A8008E1BAB /* AppDelegate.swift in Sources */,
 				147597F51DE0FEFC0033E32F /* HomeViewController.swift in Sources */,
+				147597F71DE10B2E0033E32F /* DataTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
