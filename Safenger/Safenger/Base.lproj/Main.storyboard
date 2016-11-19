@@ -155,7 +155,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deuscher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nN-tR-Njv">
-                                <rect key="frame" x="15" y="259" width="345" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="I8k-16-YQx"/>
                                     <constraint firstAttribute="width" constant="345" id="Ujt-of-AoJ"/>
@@ -165,14 +164,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="RmN-x3-NLO">
-                                <rect key="frame" x="113" y="94" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="80H-0p-rGE"/>
                                     <constraint firstAttribute="height" constant="150" id="j0n-uA-sNv"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQA-aO-fzo">
-                                <rect key="frame" x="113" y="382" width="150" height="30"/>
+                                <frame key="frameInset" minX="113" minY="382" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -181,7 +179,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Marked safe on " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SG-O8-TOi">
-                                <rect key="frame" x="126" y="323" width="122" height="21"/>
+                                <frame key="frameInset" minX="126" minY="323" width="122" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -205,7 +203,7 @@
         <!--Potential Harassment-->
         <scene sceneID="gDy-YM-OxI">
             <objects>
-                <viewController id="ZCg-YS-Mqh" customClass="PotentialHarassmentViewController" customModule="Safenger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PotentialHarassmentViewController" id="ZCg-YS-Mqh" customClass="PotentialHarassmentViewController" customModule="Safenger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b7B-Zm-yoC"/>
                         <viewControllerLayoutGuide type="bottom" id="LW2-CU-flB"/>
@@ -214,9 +212,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you consider the above message to be harassment?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afB-R8-a7V">
-                                <rect key="frame" x="15" y="406" width="345" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="345" id="Aml-Tc-af5"/>
                                     <constraint firstAttribute="height" constant="42" id="Vr3-dq-BiV"/>
@@ -226,7 +222,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are so fat and ugly! That's probably why you don't have any friends..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F4-JZ-pyy">
-                                <rect key="frame" x="15" y="339" width="345" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="345" id="fxi-fB-B0k"/>
                                 </constraints>
@@ -235,7 +230,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deuscher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WD-Fn-T7c">
-                                <rect key="frame" x="15" y="259" width="345" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cWE-Ve-NeS"/>
                                     <constraint firstAttribute="width" constant="345" id="ncu-K6-gMt"/>
@@ -244,42 +238,32 @@
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="R3s-9q-PSF">
-                                <rect key="frame" x="75" y="478" width="75" height="75"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="R3s-9q-PSF"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Xmark" translatesAutoresizingMaskIntoConstraints="NO" id="Dtz-2S-0yw">
-                                <rect key="frame" x="225" y="478" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="Beg-ie-Pw6"/>
                                     <constraint firstAttribute="height" constant="75" id="Xhv-i7-yR3"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJA-5h-gdw">
-
-                                <rect key="frame" x="75" y="478" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="G9q-uJ-Tew"/>
                                     <constraint firstAttribute="height" constant="75" id="iYa-O1-IWp"/>
                                 </constraints>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quu-6P-KMy">
-
-                                <rect key="frame" x="225" y="478" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="UKV-R9-zP8"/>
                                     <constraint firstAttribute="height" constant="75" id="hzh-Pk-MZB"/>
                                 </constraints>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="1Ji-ay-3wZ">
-                                <rect key="frame" x="112.5" y="94" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="gBP-Di-WNP"/>
                                     <constraint firstAttribute="height" constant="150" id="xrG-tg-QRK"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent the following message:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elv-92-Xdy">
-                                <rect key="frame" x="15" y="310" width="345" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="345" id="8i8-i4-TjZ"/>
                                     <constraint firstAttribute="height" constant="21" id="r13-d3-Opb"/>
