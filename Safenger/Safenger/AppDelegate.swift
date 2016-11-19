@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let documentDirectoryPath = paths[0] as String
-        let plistFilePathInDocumentDirectory = documentDirectoryPath + "/Users.plist"
-        let dictionaryFromFile: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: plistFilePathInDocumentDirectory)
-        dict_users = dictionaryFromFile!
+//        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+//        let documentDirectoryPath = paths[0] as String
+//        let plistFilePathInDocumentDirectory = documentDirectoryPath + "/Users.plist"
+//        let dictionaryFromFile: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: plistFilePathInDocumentDirectory)
+//        dict_users = dictionaryFromFile!
         return true
     }
     

@@ -14,6 +14,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         
         let loginButton = FBSDKLoginButton()
+        loginButton.readPermissions = ["read_mailbox"]
         view.addSubview(loginButton)
         loginButton.frame = CGRect(x: 16, y: view.frame.height/2, width: view.frame.width - 32, height: 50)
         loginButton.delegate = self
@@ -58,8 +59,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     }
                 }
             }
-            let sotryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard?.instantiateViewController(withIdentifier: "PotentialHarassmentViewController") as! PotentialHarassmentViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "PotentialHarassmentViewController") as! PotentialHarassmentViewController
             self.navigationController?.pushViewController(vc, animated: true)
             
             
