@@ -44,6 +44,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.messageObjects = (json["messages"]) as? NSArray
                     
                     print(self.messageObjects)
+                    self.tableView.reloadData()
                     
                 }
                 catch {
@@ -71,8 +72,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // Asks the data source to return the number of rows in a section, the number of which is given
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
-        return (messageObjects?.count)!
+        if (messageObjects != nil) {
+            return (messageObjects?.count)!
+        }
+        return 0;
     }
     
     /*
@@ -88,8 +91,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // MovieCell, which was specified in the storyboard
         let cell: DataTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DataCell") as! DataTableViewCell
         let rowNumber: Int = (indexPath as NSIndexPath).row
-        let objectmessage = messageObjects?[rowNumber] as! [String:AnyObject]
-        cell.NameLabel.text = objectmessage["sender"] as! String?
+        if (segmentedControl.selectedSegmentIndex == 0) {
+            
+            let objectmessage = messageObjects?[rowNumber] as! [String:AnyObject]
+            cell.NameLabel.text = objectmessage["sender"] as! String?
+            cell.messageLabel.text = objectmessage["message"] as! String?
+        }
+        else {
+            
+        }
         
     
         // Obtain the Dictionary containing the data about the movie at rowNumber
