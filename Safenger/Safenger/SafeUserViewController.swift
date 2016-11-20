@@ -13,10 +13,15 @@ class SafeUserViewController: UIViewController {
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     
+    var profileImagePassed: UIImage!
+    var usernamePassed: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        profileImageView.image = profileImagePassed
+        nameLabel.text = usernamePassed
     }
 
     override func didReceiveMemoryWarning() {
