@@ -10,6 +10,9 @@ import UIKit
 
 class SafeUserViewController: UIViewController {
 
+    @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

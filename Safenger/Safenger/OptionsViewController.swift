@@ -1,19 +1,15 @@
 //
-//  PotentialHarassmentViewController.swift
+//  OptionsViewController.swift
 //  Safenger
 //
-//  Created by Sean Crenshaw on 11/19/16.
+//  Created by Rishi Pulluri on 11/20/16.
 //  Copyright © 2016 Sean Crenshaw. All rights reserved.
 //
 
 import UIKit
 
-class PotentialHarassmentViewController: UIViewController {
+class OptionsViewController: UIViewController {
 
-    @IBOutlet var profileImageView: UIImageView!
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var messageLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +22,9 @@ class PotentialHarassmentViewController: UIViewController {
     }
     
 
+    @IBAction func auomateButton(_ sender: AnyObject) {
+        
+    }
     /*
     // MARK: - Navigation
 

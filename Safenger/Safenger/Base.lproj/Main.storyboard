@@ -19,9 +19,10 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5A-Id-gSk">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="9Es-Pf-FdU"/>
-                                    <constraint firstAttribute="width" constant="107" id="J3t-aD-5Sx"/>
+                                    <constraint firstAttribute="height" constant="50" id="9Es-Pf-FdU"/>
+                                    <constraint firstAttribute="width" constant="200" id="J3t-aD-5Sx"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Login to Twitter"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="tEg-rA-hY8"/>
@@ -164,7 +165,7 @@
                         <outlet property="safeUsersLabel" destination="p6r-Mr-j8l" id="ZAm-TW-CBK"/>
                         <outlet property="segmentedControl" destination="sMl-Vx-zEE" id="lza-Xt-IsH"/>
                         <outlet property="tableView" destination="pCb-gj-j9i" id="XQA-oo-SrI"/>
-                        <segue destination="ZCg-YS-Mqh" kind="show" identifier="ShowHarrassment" id="pKa-ip-0yT"/>
+                        <segue destination="ZCg-YS-Mqh" kind="show" identifier="ShowHarassment" id="pKa-ip-0yT"/>
                         <segue destination="SlC-Is-S1Q" kind="show" identifier="ShowUser" id="b5A-eJ-NfN"/>
                     </connections>
                 </viewController>
@@ -209,6 +210,9 @@
                                 <state key="normal" title="Unsafe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="dfY-5Q-XjZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marked safe on November 20th, 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SG-O8-TOi">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -230,6 +234,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Safe User" id="lzE-aS-RJW"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="4nN-tR-Njv" id="YWf-CF-lBE"/>
+                        <outlet property="profileImageView" destination="RmN-x3-NLO" id="AiS-bV-DuY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kK5-Vr-JCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -249,7 +257,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you consider the above message to be harassment?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afB-R8-a7V">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="345" id="Aml-Tc-af5"/>
                                     <constraint firstAttribute="height" constant="42" id="Vr3-dq-BiV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -257,9 +264,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are so fat and ugly! That's probably why you don't have any friends..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F4-JZ-pyy">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="345" id="fxi-fB-B0k"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -267,7 +271,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deuscher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WD-Fn-T7c">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cWE-Ve-NeS"/>
-                                    <constraint firstAttribute="width" constant="345" id="ncu-K6-gMt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -285,25 +288,24 @@
                                     <constraint firstAttribute="width" constant="75" id="G9q-uJ-Tew"/>
                                     <constraint firstAttribute="height" constant="75" id="iYa-O1-IWp"/>
                                 </constraints>
-                                <connections>
-                                    <segue destination="etG-V6-G44" kind="show" id="kbZ-kT-BIS"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quu-6P-KMy">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="UKV-R9-zP8"/>
                                     <constraint firstAttribute="height" constant="75" id="hzh-Pk-MZB"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="OQI-fE-Zse"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="1Ji-ay-3wZ">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="gBP-Di-WNP"/>
-                                    <constraint firstAttribute="height" constant="150" id="xrG-tg-QRK"/>
+                                    <constraint firstAttribute="width" constant="100" id="gBP-Di-WNP"/>
+                                    <constraint firstAttribute="height" constant="100" id="xrG-tg-QRK"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent the following message:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elv-92-Xdy">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="345" id="8i8-i4-TjZ"/>
                                     <constraint firstAttribute="height" constant="21" id="r13-d3-Opb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -313,27 +315,41 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="R3s-9q-PSF" firstAttribute="leading" secondItem="W7b-TM-Lks" secondAttribute="leading" constant="75" id="94X-1c-KAJ"/>
+                            <constraint firstAttribute="trailing" secondItem="afB-R8-a7V" secondAttribute="trailing" constant="15" id="Aj2-VQ-XFI"/>
+                            <constraint firstItem="afB-R8-a7V" firstAttribute="leading" secondItem="W7b-TM-Lks" secondAttribute="leading" constant="15" id="DnB-Xa-5UE"/>
                             <constraint firstItem="elv-92-Xdy" firstAttribute="centerX" secondItem="W7b-TM-Lks" secondAttribute="centerX" id="FMc-i4-f6N"/>
                             <constraint firstItem="elv-92-Xdy" firstAttribute="top" secondItem="7WD-Fn-T7c" secondAttribute="bottom" constant="30" id="JCG-JX-YT4"/>
                             <constraint firstItem="quu-6P-KMy" firstAttribute="centerX" secondItem="Dtz-2S-0yw" secondAttribute="centerX" id="JUc-Ed-TXe"/>
                             <constraint firstItem="1Ji-ay-3wZ" firstAttribute="top" secondItem="b7B-Zm-yoC" secondAttribute="bottom" constant="30" id="Kmo-1z-rvT"/>
-                            <constraint firstAttribute="trailing" secondItem="Dtz-2S-0yw" secondAttribute="trailing" constant="75" id="ME4-ua-TZ9"/>
                             <constraint firstItem="7WD-Fn-T7c" firstAttribute="centerX" secondItem="W7b-TM-Lks" secondAttribute="centerX" id="OAd-61-cZs"/>
                             <constraint firstItem="quu-6P-KMy" firstAttribute="centerY" secondItem="Dtz-2S-0yw" secondAttribute="centerY" id="ONk-Ac-tWd"/>
+                            <constraint firstItem="quu-6P-KMy" firstAttribute="centerX" secondItem="W7b-TM-Lks" secondAttribute="centerX" constant="75" id="PbG-DE-3wK"/>
                             <constraint firstItem="eJA-5h-gdw" firstAttribute="centerX" secondItem="R3s-9q-PSF" secondAttribute="centerX" id="Rlm-CB-ylZ"/>
                             <constraint firstItem="afB-R8-a7V" firstAttribute="centerX" secondItem="W7b-TM-Lks" secondAttribute="centerX" id="Rly-EY-MsW"/>
                             <constraint firstItem="quu-6P-KMy" firstAttribute="top" secondItem="afB-R8-a7V" secondAttribute="bottom" constant="30" id="RmS-4h-wfo"/>
                             <constraint firstItem="6F4-JZ-pyy" firstAttribute="top" secondItem="elv-92-Xdy" secondAttribute="bottom" constant="8" id="UK6-aD-dVe"/>
                             <constraint firstItem="7WD-Fn-T7c" firstAttribute="top" secondItem="1Ji-ay-3wZ" secondAttribute="bottom" constant="15" id="X7M-aB-A9N"/>
+                            <constraint firstAttribute="trailing" secondItem="6F4-JZ-pyy" secondAttribute="trailing" constant="15" id="YIX-6H-C6M"/>
                             <constraint firstItem="6F4-JZ-pyy" firstAttribute="centerX" secondItem="W7b-TM-Lks" secondAttribute="centerX" id="agf-6v-nEP"/>
+                            <constraint firstAttribute="trailing" secondItem="7WD-Fn-T7c" secondAttribute="trailing" constant="15" id="cXB-66-xWG"/>
+                            <constraint firstItem="R3s-9q-PSF" firstAttribute="centerX" secondItem="W7b-TM-Lks" secondAttribute="centerX" constant="-75" id="eZI-At-HCu"/>
                             <constraint firstItem="afB-R8-a7V" firstAttribute="top" secondItem="6F4-JZ-pyy" secondAttribute="bottom" constant="26" id="grK-fm-kPW"/>
                             <constraint firstItem="eJA-5h-gdw" firstAttribute="centerY" secondItem="R3s-9q-PSF" secondAttribute="centerY" id="heI-6p-P3R"/>
+                            <constraint firstAttribute="trailing" secondItem="elv-92-Xdy" secondAttribute="trailing" constant="15" id="iIH-AV-ShT"/>
                             <constraint firstItem="1Ji-ay-3wZ" firstAttribute="centerX" secondItem="W7b-TM-Lks" secondAttribute="centerX" id="vbh-pR-lZ2"/>
+                            <constraint firstItem="6F4-JZ-pyy" firstAttribute="leading" secondItem="W7b-TM-Lks" secondAttribute="leading" constant="15" id="vht-y1-3GR"/>
                             <constraint firstItem="Dtz-2S-0yw" firstAttribute="centerY" secondItem="R3s-9q-PSF" secondAttribute="centerY" id="vvY-I9-mVn"/>
+                            <constraint firstItem="elv-92-Xdy" firstAttribute="leading" secondItem="W7b-TM-Lks" secondAttribute="leading" constant="15" id="w6R-UJ-EJ0"/>
+                            <constraint firstItem="7WD-Fn-T7c" firstAttribute="leading" secondItem="W7b-TM-Lks" secondAttribute="leading" constant="15" id="xNi-dy-0eA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Potential Harassment" id="bHD-DX-dQZ"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="6F4-JZ-pyy" id="tbT-KM-z4A"/>
+                        <outlet property="nameLabel" destination="7WD-Fn-T7c" id="VgX-ui-Rz2"/>
+                        <outlet property="profileImageView" destination="1Ji-ay-3wZ" id="IZM-TD-UgF"/>
+                        <segue destination="etG-V6-G44" kind="show" identifier="check" id="sZR-NP-kHe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4p-sJ-ZW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -342,7 +358,7 @@
         <!--Take Action-->
         <scene sceneID="Jdm-c3-yFU">
             <objects>
-                <viewController id="etG-V6-G44" sceneMemberID="viewController">
+                <viewController id="etG-V6-G44" customClass="OptionsViewController" customModule="Safenger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bGc-nx-a1X"/>
                         <viewControllerLayoutGuide type="bottom" id="YX3-MD-Zxe"/>
@@ -383,6 +399,9 @@
                                 <state key="normal" title="Automated Warning">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="auomateButton:" destination="etG-V6-G44" eventType="touchUpInside" id="xlP-n8-X1g"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLz-HD-sdT">
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -452,4 +471,7 @@
         <image name="Xmark" width="75" height="75"/>
         <image name="frank" width="960" height="960"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="OQI-fE-Zse"/>
+    </inferredMetricsTieBreakers>
 </document>

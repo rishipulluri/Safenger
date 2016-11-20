@@ -74,8 +74,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // Asks the data source to return the number of rows in a section, the number of which is given
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var object = 4
+        if let object1 = messageObjects?.count
+        {
+             object = (messageObjects?.count)! as Int
+        }
         
-          potentialHarassmentsLabel.text = "\(messageObjects?.count) Potential Harassments"
+          potentialHarassmentsLabel.text = "\(object) Potential Harassments"
         if (messageObjects != nil && segmentedControl.selectedSegmentIndex == 0) {
             return (messageObjects?.count)!
 
@@ -172,7 +177,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // print(movieDataToPass)
         
-        performSegue(withIdentifier: "MovieInfo", sender: self)
+        if (segmentedControl.selectedSegmentIndex == 0) {
+            performSegue(withIdentifier: "ShowHarassment", sender: self)
+        } else {
+            performSegue(withIdentifier: "ShowUser", sender: self)
+        }
     }
     
     @IBAction func segmentPressed(_ sender: AnyObject) {
