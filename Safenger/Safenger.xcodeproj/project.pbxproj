@@ -17,6 +17,7 @@
 		14DB1FE11DE0E9A8008E1BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDF1DE0E9A8008E1BAB /* LaunchScreen.storyboard */; };
 		5A5EEA1ED7CF49AB93548E79 /* Pods_Safenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE6D89042049778B864CB96 /* Pods_Safenger.framework */; };
 		D1CF71B11DE0FDD20010FABD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF71B01DE0FDD20010FABD /* LoginViewController.swift */; };
+		D1CF71B71DE133010010FABD /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF71B61DE133010010FABD /* TwitterClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		AD71F89D9109EBA519D0AF9A /* Pods-Safenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safenger/Pods-Safenger.release.xcconfig"; sourceTree = "<group>"; };
 		D1CF71B01DE0FDD20010FABD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D1CF71B21DE0FF8E0010FABD /* Safenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Safenger.entitlements; sourceTree = "<group>"; };
+		D1CF71B61DE133010010FABD /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */,
 				14DB1FDF1DE0E9A8008E1BAB /* LaunchScreen.storyboard */,
 				14DB1FE21DE0E9A8008E1BAB /* Info.plist */,
+				D1CF71B61DE133010010FABD /* TwitterClient.swift */,
 			);
 			path = Safenger;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 					14DB1FD21DE0E9A8008E1BAB = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = U3465V32BF;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -206,7 +210,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FA0FCB4F0614B7C8D2693C6D /* [CP] Copy Pods Resources */ = {
@@ -235,6 +239,7 @@
 				D1CF71B11DE0FDD20010FABD /* LoginViewController.swift in Sources */,
 				147597F91DE114E10033E32F /* PotentialHarassmentViewController.swift in Sources */,
 				14DB1FD71DE0E9A8008E1BAB /* AppDelegate.swift in Sources */,
+				D1CF71B71DE133010010FABD /* TwitterClient.swift in Sources */,
 				147597F51DE0FEFC0033E32F /* HomeViewController.swift in Sources */,
 				147597F71DE10B2E0033E32F /* DataTableViewCell.swift in Sources */,
 			);
@@ -360,6 +365,7 @@
 			baseConfigurationReference = 9125EEE65F98A6EDFFB7D095 /* Pods-Safenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Safenger/Safenger.entitlements;
 				DEVELOPMENT_TEAM = U3465V32BF;
 				INFOPLIST_FILE = Safenger/Info.plist;
@@ -367,6 +373,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.seancrenshaw.Safenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -376,6 +383,7 @@
 			baseConfigurationReference = AD71F89D9109EBA519D0AF9A /* Pods-Safenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Safenger/Safenger.entitlements;
 				DEVELOPMENT_TEAM = U3465V32BF;
 				INFOPLIST_FILE = Safenger/Info.plist;

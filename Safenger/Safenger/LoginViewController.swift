@@ -7,77 +7,40 @@
 //
 
 import UIKit
-import FBSDKLoginKit
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+import BDBOAuth1Manager
+
+class LoginViewController: UIViewController  {
+    
+    let twitterConsumerKey = "2nkEy3wkbkFFvDcUCkuCYeIrn";
+    let twitterConsumerSecret = "rNEf4gA1GSniCr30PwtTeLYwsc58NEzcjVgC7qdwjJwqTjNa7H"
+    let twitterBaseUrl = NSURL(string: "https://api.twitter.com")
+    
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let loginButton = FBSDKLoginButton()
-        loginButton.readPermissions = ["email"]
-        view.addSubview(loginButton)
-        loginButton.frame = CGRect(x: 16, y: view.frame.height/2, width: view.frame.width - 32, height: 50)
-        loginButton.delegate = self
+        TwitterClient(baseURL: twitterBaseUrl as URL!, consumerKey: twitterConsumerKey, consumerSecret: twitterConsumerSecret)
+
         
-        if let token = FBSDKAccessToken.current() {
-            print(token.tokenString)
-        }
+       
     }
     
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("logged out")
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     
-    func fetchProfile() {
-        print("fetch profile")
-        let profileEndpoints = ["fields":"email, first_name, last_name, picture.type(large)"]
-        FBSDKGraphRequest(graphPath: "me", parameters: profileEndpoints).start {(connection, result, error) -> Void in
-            var result = result as! NSDictionary
-
-            if (error != nil) {
-                
-                print(error)
-            }
-            
-            
-           
-            if let first_name = result["first_name"] as? String {
-                print(first_name)
-            }
-            if let last_name = result["last_name"] as? String {
-                print(last_name)
-            }
-            if let picture = result["picture"] as? NSDictionary {
-                if let data = picture["data"] as? NSDictionary {
-                    if let url = data["url"] as? String {
-                        print(url)
-                    }
-                }
-            }
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "PotentialHarassmentViewController") as! PotentialHarassmentViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-            
-            
-            
-        }
         
-    }
     
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!){
-        if (error != nil) {
-            print(error)
-            return
-
+    @IBAction func loginTwitter(_ sender: AnyObject) {
+        TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
+        
+        TwitterClient.sharedInstance.fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: NSURL(string: "cptwitterdemo://oauth") as URL!, scope:nil, success: {(requestToken: (BDBOAuth1Credential?)) -> Void in
+            
+        })  {(_: (Error?)) -> Void in
+            print("error")
         }
-        fetchProfile()
-
     }
+
     
     
     
