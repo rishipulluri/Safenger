@@ -39,13 +39,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
                     
-                    print(json)
-                    
-                    print(json["messages"])
-                    
                     self.messageObjects = (json["messages"]) as? NSArray
                     
-                    print(self.messageObjects)
                     self.tableView.reloadData()
 
                     
@@ -58,7 +53,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         task.resume()
 
-//        print(messageObjects)
 
     }
 
@@ -108,9 +102,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let objectmessage = messageObjects?[rowNumber] as! [String:AnyObject]
         if (segmentedControl.selectedSegmentIndex == 0) {
             
-            
-            cell.NameLabel.text = objectmessage["sender"] as! String?
+
+            let objectmessage = messageObjects?[rowNumber] as! [String:AnyObject]
+            cell.nameLabel.text = objectmessage["sender"] as! String?
             cell.messageLabel.text = objectmessage["message"] as! String?
+            
+            let url = URL(string: objectmessage["img"] as! String)
+            let data = try? Data(contentsOf: url!)
+            cell.profileImageView.image = UIImage(data: data!)
         }
         else {
             
@@ -120,7 +119,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             var count = (messageObjects?.count)! as Int
             
             let person = applicationDelegate.dict_Country_Cities1["Names"] as! [String]
-            cell.NameLabel.text = person[rowNumber]
+            cell.nameLabel.text = person[rowNumber]
             
             for i in 1...count {
                 var x = messageObjects?[i] as! [String:AnyObject]

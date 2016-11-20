@@ -10,8 +10,8 @@ import UIKit
 
 class DataTableViewCell: UITableViewCell {
     
-    @IBOutlet var ProfileImageView: UIImageView!
-    @IBOutlet var NameLabel: UILabel!
+    @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
 
     override func awakeFromNib() {

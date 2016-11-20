@@ -78,30 +78,49 @@
                                             <frame key="frameInset" width="342" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="9SY-G5-uiz">
-                                                    <frame key="frameInset" minX="8" width="59" height="59"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="9SY-G5-uiz">
+                                                    <rect key="frame" x="8" y="5" width="54" height="54"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="54" id="9hc-LT-net"/>
+                                                        <constraint firstAttribute="width" constant="54" id="knh-ZZ-mX8"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deuscher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP6-9w-f5x">
-                                                    <frame key="frameInset" minX="75" width="267" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deuscher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP6-9w-f5x">
+                                                    <rect key="frame" x="70" y="5" width="267" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="267" id="ZCL-BB-y8A"/>
+                                                        <constraint firstAttribute="height" constant="17" id="vL5-a7-MXW"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are so fat and ugly! That's probably why you don't have any friends..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWA-b6-gdV">
-                                                    <frame key="frameInset" minX="75" minY="22" width="267" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are so fat and ugly! That's probably why you don't have any friends..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWA-b6-gdV">
+                                                    <rect key="frame" x="70" y="24" width="267" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="267" id="MyW-X0-PRf"/>
+                                                        <constraint firstAttribute="height" constant="34" id="eWa-iR-Ps2"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RP6-9w-f5x" firstAttribute="leading" secondItem="9SY-G5-uiz" secondAttribute="trailing" constant="8" id="0K0-Nl-Rvh"/>
+                                                <constraint firstItem="9SY-G5-uiz" firstAttribute="leading" secondItem="TIT-0o-zlQ" secondAttribute="leading" constant="8" id="9MS-oE-4Xw"/>
+                                                <constraint firstItem="zWA-b6-gdV" firstAttribute="top" secondItem="RP6-9w-f5x" secondAttribute="bottom" constant="2" id="Ear-NE-qaL"/>
+                                                <constraint firstItem="RP6-9w-f5x" firstAttribute="top" secondItem="TIT-0o-zlQ" secondAttribute="top" constant="5" id="hd0-Cf-bp2"/>
+                                                <constraint firstItem="zWA-b6-gdV" firstAttribute="leading" secondItem="9SY-G5-uiz" secondAttribute="trailing" constant="8" id="rOc-ES-Stc"/>
+                                                <constraint firstItem="9SY-G5-uiz" firstAttribute="top" secondItem="TIT-0o-zlQ" secondAttribute="top" constant="5" id="wTF-CN-TGj"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="NameLabel" destination="RP6-9w-f5x" id="7Ra-jR-HKH"/>
-                                            <outlet property="ProfileImageView" destination="9SY-G5-uiz" id="6Y8-lr-Sti"/>
                                             <outlet property="messageLabel" destination="zWA-b6-gdV" id="IqM-3C-bGg"/>
+                                            <outlet property="nameLabel" destination="RP6-9w-f5x" id="Vp9-LM-qmw"/>
+                                            <outlet property="profileImageView" destination="9SY-G5-uiz" id="U4j-Yt-USj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
