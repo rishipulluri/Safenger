@@ -116,12 +116,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             var index = 0
             
-            var count = (messageObjects?.count)! as Int
+            let count = (messageObjects?.count)! as Int
             
             let person = applicationDelegate.dict_Country_Cities1["Names"] as! [String]
             cell.nameLabel.text = person[rowNumber]
             
-            for i in 1...count {
+            for i in 0...count-1 {
                 var x = messageObjects?[i] as! [String:AnyObject]
 
                 if (x["sender"] as! String == person[rowNumber]) {
