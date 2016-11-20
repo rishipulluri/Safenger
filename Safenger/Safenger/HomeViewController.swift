@@ -71,7 +71,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // Asks the data source to return the number of rows in a section, the number of which is given
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3// arrayOfMovieDictionaries.count
+        
+        return (messageObjects?.count)!
     }
     
     /*
@@ -86,12 +87,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Obtain the object reference of a reusable table view cell object instantiated under the identifier
         // MovieCell, which was specified in the storyboard
         let cell: DataTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DataCell") as! DataTableViewCell
+        let rowNumber: Int = (indexPath as NSIndexPath).row
+        let objectmessage = messageObjects?[rowNumber] as! [String:AnyObject]
+        cell.NameLabel.text = objectmessage["sender"] as! String?
         
+    
         // Obtain the Dictionary containing the data about the movie at rowNumber
         // let movieDataDict = arrayOfMovieDictionaries[rowNumber] as! Dictionary<String, AnyObject>
-        
         return cell
+        
     }
+    
+ 
     
     /*
      -----------------------------------
