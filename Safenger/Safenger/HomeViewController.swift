@@ -23,6 +23,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ProfileImageView.backgroundColor = UIColor.clear
+        ProfileImageView.layer.cornerRadius = 15
+        ProfileImageView.layer.borderWidth = 1
+        ProfileImageView.layer.borderColor = UIColor.blue.cgColor
         
         let requestURL: NSURL = NSURL(string: "https://safenger-pjemrogysl.now.sh/")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
@@ -71,8 +75,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // Asks the data source to return the number of rows in a section, the number of which is given
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+          potentialHarassmentsLabel.text = "\(messageObjects?.count) Potential Harassments"
         if (messageObjects != nil && segmentedControl.selectedSegmentIndex == 0) {
             return (messageObjects?.count)!
+
         }
         else if (applicationDelegate.dict_Country_Cities1["Names"] != nil && segmentedControl.selectedSegmentIndex == 1){
             let const = applicationDelegate.dict_Country_Cities1["Names"] as! [String]
@@ -80,9 +86,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return const.count
         }
         print(applicationDelegate.dict_Country_Cities1["Names"])
-        print(segmentedControl.selectedSegmentIndex)
+        let users =  applicationDelegate.dict_Country_Cities1["Names"] as! [String]
+        safeUsersLabel.text = "\(users.count) Safe Users"
+      
 
-        
         return 0;
     }
     
