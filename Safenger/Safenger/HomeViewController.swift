@@ -15,14 +15,39 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet var safeUsersLabel: UILabel!
     @IBOutlet var potentialHarassmentsLabel: UILabel!
     @IBOutlet var segmentedControl: UISegmentedControl!
-
+    var messageObjects: NSDictionary?
     // Instance variables
     let tableViewRowHeight: CGFloat = 60.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let requestURL: NSURL = NSURL(string: "https://safenger-pjemrogysl.now.sh/")!
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest as URLRequest) {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                
+                do{
+                    
+                    let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
+                    
+                    self.messageObjects = (json["messages"] as AnyObject) as? NSDictionary
+                    
+                }
+                catch {
+                    print("Error with Json: \(error)")
+                }
+            }
+        }
+        task.resume()
+        print(messageObjects)
 
-        // Do any additional setup after loading the view.
     }
 
     /*
