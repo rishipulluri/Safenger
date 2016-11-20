@@ -225,6 +225,9 @@
                                 <state key="normal" title="Unsafe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="dfY-5Q-XjZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marked safe on November 20th, 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SG-O8-TOi">
                                 <rect key="frame" x="15" y="330" width="345" height="20.5"/>
@@ -247,6 +250,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Safe User" id="lzE-aS-RJW"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="4nN-tR-Njv" id="YWf-CF-lBE"/>
+                        <outlet property="profileImageView" destination="RmN-x3-NLO" id="AiS-bV-DuY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kK5-Vr-JCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you consider the above message to be harassment?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afB-R8-a7V">
-                                <rect key="frame" x="15" y="406" width="345" height="42"/>
+                                <rect key="frame" x="15" y="356" width="345" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Vr3-dq-BiV"/>
                                 </constraints>
@@ -274,13 +281,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are so fat and ugly! That's probably why you don't have any friends..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F4-JZ-pyy">
-                                <rect key="frame" x="15" y="339" width="345" height="41"/>
+                                <rect key="frame" x="15" y="289" width="345" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deuscher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WD-Fn-T7c">
-                                <rect key="frame" x="15" y="259" width="345" height="21"/>
+                                <rect key="frame" x="15" y="209" width="345" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cWE-Ve-NeS"/>
                                 </constraints>
@@ -289,17 +296,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="R3s-9q-PSF">
-                                <rect key="frame" x="75" y="478" width="75" height="75"/>
+                                <rect key="frame" x="75" y="428" width="75" height="75"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Xmark" translatesAutoresizingMaskIntoConstraints="NO" id="Dtz-2S-0yw">
-                                <rect key="frame" x="225" y="478" width="75" height="75"/>
+                                <rect key="frame" x="225" y="428" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="Beg-ie-Pw6"/>
                                     <constraint firstAttribute="height" constant="75" id="Xhv-i7-yR3"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJA-5h-gdw">
-                                <rect key="frame" x="75" y="478" width="75" height="75"/>
+                                <rect key="frame" x="75" y="428" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="G9q-uJ-Tew"/>
                                     <constraint firstAttribute="height" constant="75" id="iYa-O1-IWp"/>
@@ -309,21 +316,24 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quu-6P-KMy">
-                                <rect key="frame" x="225" y="478" width="75" height="75"/>
+                                <rect key="frame" x="225" y="428" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="UKV-R9-zP8"/>
                                     <constraint firstAttribute="height" constant="75" id="hzh-Pk-MZB"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="OQI-fE-Zse"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="1Ji-ay-3wZ">
-                                <rect key="frame" x="112.5" y="94" width="150" height="150"/>
+                                <rect key="frame" x="137.5" y="94" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="gBP-Di-WNP"/>
-                                    <constraint firstAttribute="height" constant="150" id="xrG-tg-QRK"/>
+                                    <constraint firstAttribute="width" constant="100" id="gBP-Di-WNP"/>
+                                    <constraint firstAttribute="height" constant="100" id="xrG-tg-QRK"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent the following message:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elv-92-Xdy">
-                                <rect key="frame" x="15" y="310" width="345" height="21"/>
+                                <rect key="frame" x="15" y="260" width="345" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="r13-d3-Opb"/>
                                 </constraints>
@@ -363,6 +373,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Potential Harassment" id="bHD-DX-dQZ"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="6F4-JZ-pyy" id="tbT-KM-z4A"/>
+                        <outlet property="nameLabel" destination="7WD-Fn-T7c" id="VgX-ui-Rz2"/>
+                        <outlet property="profileImageView" destination="1Ji-ay-3wZ" id="IZM-TD-UgF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4p-sJ-ZW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -485,4 +500,7 @@
         <image name="Profile" width="150" height="150"/>
         <image name="Xmark" width="75" height="75"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dfY-5Q-XjZ"/>
+    </inferredMetricsTieBreakers>
 </document>

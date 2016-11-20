@@ -165,7 +165,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // print(movieDataToPass)
         
-        performSegue(withIdentifier: "ShowHarassment", sender: self)
+        if (segmentedControl.selectedSegmentIndex == 0) {
+            performSegue(withIdentifier: "ShowHarassment", sender: self)
+        } else {
+            performSegue(withIdentifier: "ShowUser", sender: self)
+        }
     }
     
     @IBAction func segmentPressed(_ sender: AnyObject) {
