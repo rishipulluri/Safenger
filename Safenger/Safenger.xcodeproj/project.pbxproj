@@ -11,7 +11,6 @@
 		147597F71DE10B2E0033E32F /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597F61DE10B2E0033E32F /* DataTableViewCell.swift */; };
 		147597F91DE114E10033E32F /* PotentialHarassmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597F81DE114E10033E32F /* PotentialHarassmentViewController.swift */; };
 		147597FB1DE115040033E32F /* SafeUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597FA1DE115040033E32F /* SafeUserViewController.swift */; };
-		147597FF1DE165EC0033E32F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 147597FE1DE165EC0033E32F /* GoogleService-Info.plist */; };
 		14DB1FD71DE0E9A8008E1BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */; };
 		14DB1FDC1DE0E9A8008E1BAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDA1DE0E9A8008E1BAB /* Main.storyboard */; };
 		14DB1FDE1DE0E9A8008E1BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */; };
@@ -25,7 +24,6 @@
 		147597F61DE10B2E0033E32F /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		147597F81DE114E10033E32F /* PotentialHarassmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotentialHarassmentViewController.swift; sourceTree = "<group>"; };
 		147597FA1DE115040033E32F /* SafeUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeUserViewController.swift; sourceTree = "<group>"; };
-		147597FE1DE165EC0033E32F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14DB1FD31DE0E9A8008E1BAB /* Safenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Safenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14DB1FDB1DE0E9A8008E1BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 				14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */,
 				14DB1FDF1DE0E9A8008E1BAB /* LaunchScreen.storyboard */,
 				14DB1FE21DE0E9A8008E1BAB /* Info.plist */,
-				147597FE1DE165EC0033E32F /* GoogleService-Info.plist */,
 			);
 			path = Safenger;
 			sourceTree = "<group>";
@@ -175,7 +172,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				14DB1FE11DE0E9A8008E1BAB /* LaunchScreen.storyboard in Resources */,
-				147597FF1DE165EC0033E32F /* GoogleService-Info.plist in Resources */,
 				14DB1FDE1DE0E9A8008E1BAB /* Assets.xcassets in Resources */,
 				14DB1FDC1DE0E9A8008E1BAB /* Main.storyboard in Resources */,
 			);
@@ -211,7 +207,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FA0FCB4F0614B7C8D2693C6D /* [CP] Copy Pods Resources */ = {
