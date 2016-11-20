@@ -7,30 +7,79 @@
 //
 
 import UIKit
-import Firebase
-import OAuthSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var dict_users: NSMutableDictionary = NSMutableDictionary()
+    var dict_Country_Cities: NSMutableDictionary = NSMutableDictionary()
+    var dict_Country_Cities1: NSMutableDictionary = NSMutableDictionary()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FIRApp.configure()
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirectoryPath = paths[0] as String
+        
+        let plistFilePathInDocumentDirectory = documentDirectoryPath + "/messages"
+        
+        let plistFilePathInDocumentDirectory1 = documentDirectoryPath + "/safeUsers"
+        
+        let dictionaryFromFile: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: plistFilePathInDocumentDirectory)
+        
+        let dictionaryFromFile1:NSMutableDictionary? = NSMutableDictionary(contentsOfFile: plistFilePathInDocumentDirectory1)
+        
+        
+        if let dictionaryFromFileInDocumentDirectory = dictionaryFromFile {
+            
+            // CountryCities.plist exists in the Document directory
+            dict_Country_Cities = dictionaryFromFileInDocumentDirectory
+            
+        } else {
+            
+            
+            let plistFilePathInMainBundle = Bundle.main.path(forResource: "messages", ofType: "plist")
+            
+            
+            let dictionaryFromFileInMainBundle: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: plistFilePathInMainBundle!)
+            
+            dict_Country_Cities = dictionaryFromFileInMainBundle!
+        }
+        
+        if let dictionaryFromFileInDocumentDirectory = dictionaryFromFile1 {
+            
+            // CountryCities.plist exists in the Document directory
+            dict_Country_Cities1 = dictionaryFromFileInDocumentDirectory
+            
+        } else {
+            
+            
+            let plistFilePathInMainBundle = Bundle.main.path(forResource: "safeUsers", ofType: "plist")
+            
+            
+            let dictionaryFromFileInMainBundle: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: plistFilePathInMainBundle!)
+            
+            dict_Country_Cities1 = dictionaryFromFileInMainBundle!
+        }
+        
         return true
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        if (url.host == "oauth-callback") {
-            OAuthSwift.handle(url: url)
-        }
-        return true
-    }
-
     func applicationWillResignActive(_ application: UIApplication) {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentDirectoryPath = paths[0] as String
+        
+        let plistFilePathInDocumentDirectory = documentDirectoryPath + "/messages"
+        
+        let plistFilePathInDocumentDirectory1 = documentDirectoryPath + "/safeUsers"
+        
+        dict_Country_Cities.write(toFile: plistFilePathInDocumentDirectory, atomically: true)
+        
+        dict_Country_Cities1.write(toFile: plistFilePathInDocumentDirectory1, atomically: true)
+        
+
         
     }
+
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.

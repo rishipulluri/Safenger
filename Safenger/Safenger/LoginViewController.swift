@@ -13,10 +13,17 @@ class LoginViewController: UIViewController  {
     let twitterConsumerKey = "2nkEy3wkbkFFvDcUCkuCYeIrn";
     let twitterConsumerSecret = "2nkEy3wkbkFFvDcUCkuCYeIrn2nkEy3wkbkFFvDcUCkuCYeIrn"
     let twitterBaseUrl = NSURL(string: "https://api.twitter.com")
+    let applicationDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        applicationDelegate.dict_Country_Cities.addEntries(from: ["rishi" : "nice"])
+        applicationDelegate.dict_Country_Cities.addEntries(from: ["raju" : "nice"])
+
+        print(applicationDelegate.dict_Country_Cities)
         
 
         
