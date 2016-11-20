@@ -16,8 +16,8 @@
 		14DB1FDE1DE0E9A8008E1BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */; };
 		14DB1FE11DE0E9A8008E1BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDF1DE0E9A8008E1BAB /* LaunchScreen.storyboard */; };
 		5A5EEA1ED7CF49AB93548E79 /* Pods_Safenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE6D89042049778B864CB96 /* Pods_Safenger.framework */; };
-		D17E186B1DE1EE39009E57CC /* safeUsers.plist in Resources */ = {isa = PBXBuildFile; fileRef = D17E186A1DE1EE39009E57CC /* safeUsers.plist */; };
-		D17E186D1DE1EE5C009E57CC /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = D17E186C1DE1EE5C009E57CC /* messages.plist */; };
+		D17E186B1DE1EE39009E57CC /* SafeUsers.plist in Resources */ = {isa = PBXBuildFile; fileRef = D17E186A1DE1EE39009E57CC /* SafeUsers.plist */; };
+		D17E186D1DE1EE5C009E57CC /* Messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = D17E186C1DE1EE5C009E57CC /* Messages.plist */; };
 		D1CF71B11DE0FDD20010FABD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF71B01DE0FDD20010FABD /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +35,8 @@
 		7BE6D89042049778B864CB96 /* Pods_Safenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Safenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9125EEE65F98A6EDFFB7D095 /* Pods-Safenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Safenger/Pods-Safenger.debug.xcconfig"; sourceTree = "<group>"; };
 		AD71F89D9109EBA519D0AF9A /* Pods-Safenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safenger/Pods-Safenger.release.xcconfig"; sourceTree = "<group>"; };
-		D17E186A1DE1EE39009E57CC /* safeUsers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = safeUsers.plist; sourceTree = "<group>"; };
-		D17E186C1DE1EE5C009E57CC /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
+		D17E186A1DE1EE39009E57CC /* SafeUsers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafeUsers.plist; sourceTree = "<group>"; };
+		D17E186C1DE1EE5C009E57CC /* Messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Messages.plist; sourceTree = "<group>"; };
 		D1CF71B01DE0FDD20010FABD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D1CF71B21DE0FF8E0010FABD /* Safenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Safenger.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,8 +77,8 @@
 				D1CF71B21DE0FF8E0010FABD /* Safenger.entitlements */,
 				14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */,
 				147597F41DE0FEFC0033E32F /* HomeViewController.swift */,
-				D17E186C1DE1EE5C009E57CC /* messages.plist */,
-				D17E186A1DE1EE39009E57CC /* safeUsers.plist */,
+				D17E186C1DE1EE5C009E57CC /* Messages.plist */,
+				D17E186A1DE1EE39009E57CC /* SafeUsers.plist */,
 				147597F61DE10B2E0033E32F /* DataTableViewCell.swift */,
 				D1CF71B01DE0FDD20010FABD /* LoginViewController.swift */,
 				147597F81DE114E10033E32F /* PotentialHarassmentViewController.swift */,
@@ -179,8 +179,8 @@
 			files = (
 				14DB1FE11DE0E9A8008E1BAB /* LaunchScreen.storyboard in Resources */,
 				14DB1FDE1DE0E9A8008E1BAB /* Assets.xcassets in Resources */,
-				D17E186D1DE1EE5C009E57CC /* messages.plist in Resources */,
-				D17E186B1DE1EE39009E57CC /* safeUsers.plist in Resources */,
+				D17E186D1DE1EE5C009E57CC /* Messages.plist in Resources */,
+				D17E186B1DE1EE39009E57CC /* SafeUsers.plist in Resources */,
 				14DB1FDC1DE0E9A8008E1BAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

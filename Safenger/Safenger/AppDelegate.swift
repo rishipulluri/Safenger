@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             
             
-            let plistFilePathInMainBundle = Bundle.main.path(forResource: "messages", ofType: "plist")
+            let plistFilePathInMainBundle = Bundle.main.path(forResource: "Messages", ofType: "plist")
             
             
             let dictionaryFromFileInMainBundle: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: plistFilePathInMainBundle!)
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             
             
-            let plistFilePathInMainBundle = Bundle.main.path(forResource: "safeUsers", ofType: "plist")
+            let plistFilePathInMainBundle = Bundle.main.path(forResource: "SafeUsers", ofType: "plist")
             
             
             let dictionaryFromFileInMainBundle: NSMutableDictionary? = NSMutableDictionary(contentsOfFile: plistFilePathInMainBundle!)

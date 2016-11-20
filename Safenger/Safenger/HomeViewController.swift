@@ -15,7 +15,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet var safeUsersLabel: UILabel!
     @IBOutlet var potentialHarassmentsLabel: UILabel!
     @IBOutlet var segmentedControl: UISegmentedControl!
-    var messageObjects: NSDictionary?
+    var messageObjects: NSArray?
     // Instance variables
     let tableViewRowHeight: CGFloat = 60.0
     
@@ -37,7 +37,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
                     
-                    self.messageObjects = (json["messages"] as AnyObject) as? NSDictionary
+//                    print(json)
+                    
+//                    print(json["messages"])
+                    
+                    self.messageObjects = (json["messages"]) as? NSArray
+                    
+                    print(self.messageObjects)
                     
                 }
                 catch {
@@ -46,7 +52,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         task.resume()
-        print(messageObjects)
+//        print(messageObjects)
 
     }
 
