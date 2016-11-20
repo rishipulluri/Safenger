@@ -18,9 +18,11 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.0)
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
+  - OAuthSwift (1.1.0)
 
 DEPENDENCIES:
   - Firebase/Core
+  - OAuthSwift (~> 1.1.0)
 
 SPEC CHECKSUMS:
   Firebase: ff77ffb77b317c3720fef57a60e9335cebf962e6
@@ -30,7 +32,8 @@ SPEC CHECKSUMS:
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
+  OAuthSwift: 7ec2c62274f6bdc30b1ba3b799c39a6fdcaea0e5
 
-PODFILE CHECKSUM: 0fba6f9e87862bc7abe37b71386f506e4052c57b
+PODFILE CHECKSUM: 07b6e95f770c7459acfc198e27cd1dc3785a9dff
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
