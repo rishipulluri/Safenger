@@ -39,13 +39,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
                     
-                    print(json)
-                    
-                    print(json["messages"])
-                    
                     self.messageObjects = (json["messages"]) as? NSArray
                     
-                    print(self.messageObjects)
                     self.tableView.reloadData()
                     
                 }
@@ -55,7 +50,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         task.resume()
-//        print(messageObjects)
 
     }
 
@@ -99,8 +93,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if (segmentedControl.selectedSegmentIndex == 0) {
             
             let objectmessage = messageObjects?[rowNumber] as! [String:AnyObject]
-            cell.NameLabel.text = objectmessage["sender"] as! String?
+            cell.nameLabel.text = objectmessage["sender"] as! String?
             cell.messageLabel.text = objectmessage["message"] as! String?
+            
+            let url = URL(string: objectmessage["img"] as! String)
+            let data = try? Data(contentsOf: url!)
+            cell.profileImageView.image = UIImage(data: data!)
         }
         else {
             
