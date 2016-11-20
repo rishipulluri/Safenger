@@ -2,7 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>rishi</key>
-	<string>https://i.ytimg.com/vi/XALGrYWJCf0/hqdefault.jpg</string>
+	<key>Names</key>
+	<array>
+		<string>rishi</string>
+		<string></string>
+		<string></string>
+	</array>
 </dict>
 </plist>

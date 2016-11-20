@@ -47,14 +47,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     print(self.messageObjects)
                     self.tableView.reloadData()
+
                     
                 }
                 catch {
                     print("Error with Json: \(error)")
                 }
+                
             }
         }
         task.resume()
+
 //        print(messageObjects)
 
     }
@@ -77,9 +80,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if (messageObjects != nil && segmentedControl.selectedSegmentIndex == 0) {
             return (messageObjects?.count)!
         }
-        else if (applicationDelegate.dict_Country_Cities1 != nil && segmentedControl.selectedSegmentIndex == 1){
-            return applicationDelegate.dict_Country_Cities1.count
+        else if (applicationDelegate.dict_Country_Cities1["Names"] != nil && segmentedControl.selectedSegmentIndex == 1){
+            let const = applicationDelegate.dict_Country_Cities1["Names"] as! [String]
+            print(const)
+            return const.count
         }
+        print(applicationDelegate.dict_Country_Cities1["Names"])
+        print(segmentedControl.selectedSegmentIndex)
+
+        
         return 0;
     }
     
@@ -96,15 +105,34 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // MovieCell, which was specified in the storyboard
         let cell: DataTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DataCell") as! DataTableViewCell
         let rowNumber: Int = (indexPath as NSIndexPath).row
+        let objectmessage = messageObjects?[rowNumber] as! [String:AnyObject]
         if (segmentedControl.selectedSegmentIndex == 0) {
             
-            let objectmessage = messageObjects?[rowNumber] as! [String:AnyObject]
+            
             cell.NameLabel.text = objectmessage["sender"] as! String?
             cell.messageLabel.text = objectmessage["message"] as! String?
         }
         else {
             
             
+            var index = 0
+            
+            var count = (messageObjects?.count)! as Int
+            
+            let person = applicationDelegate.dict_Country_Cities1["Names"] as! [String]
+            cell.NameLabel.text = person[rowNumber]
+            
+            for i in 1...count {
+                var x = messageObjects?[i] as! [String:AnyObject]
+
+                if (x["sender"] as! String == person[rowNumber]) {
+                    index = i;
+                }
+            }
+            let objectmessage = messageObjects?[index] as! [String:AnyObject]
+
+            cell.messageLabel.text = objectmessage["message"] as! String?
+
         }
         
     
@@ -141,6 +169,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         performSegue(withIdentifier: "MovieInfo", sender: self)
     }
     
+    @IBAction func segmentPressed(_ sender: AnyObject) {
+        tableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation
