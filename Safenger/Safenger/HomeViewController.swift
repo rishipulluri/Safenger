@@ -16,6 +16,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet var potentialHarassmentsLabel: UILabel!
     @IBOutlet var segmentedControl: UISegmentedControl!
     var messageObjects: NSArray?
+    let applicationDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
     // Instance variables
     let tableViewRowHeight: CGFloat = 60.0
     
@@ -37,9 +39,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
                     
-//                    print(json)
+                    print(json)
                     
-//                    print(json["messages"])
+                    print(json["messages"])
                     
                     self.messageObjects = (json["messages"]) as? NSArray
                     
@@ -72,8 +74,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // Asks the data source to return the number of rows in a section, the number of which is given
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if (messageObjects != nil) {
+        if (messageObjects != nil && segmentedControl.selectedSegmentIndex == 0) {
             return (messageObjects?.count)!
+        }
+        else if (applicationDelegate.dict_Country_Cities1 != nil && segmentedControl.selectedSegmentIndex == 1){
+            return applicationDelegate.dict_Country_Cities1.count
         }
         return 0;
     }
@@ -98,6 +103,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.messageLabel.text = objectmessage["message"] as! String?
         }
         else {
+            
             
         }
         
