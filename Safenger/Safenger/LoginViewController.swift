@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import OAuthSwift
 
 class LoginViewController: UIViewController  {
     
@@ -15,51 +14,18 @@ class LoginViewController: UIViewController  {
     let twitterConsumerSecret = "2nkEy3wkbkFFvDcUCkuCYeIrn2nkEy3wkbkFFvDcUCkuCYeIrn"
     let twitterBaseUrl = NSURL(string: "https://api.twitter.com")
     
-    var oauthswift: OAuth1Swift?
 
-    
-  
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        oauthswift = OAuth1Swift(
-            consumerKey:    "xvz1evFS4wEEPTGEFPHBog",
-            consumerSecret: "L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg",
-            requestTokenUrl: "https://api.twitter.com/oauth/request_token",
-            authorizeUrl:    "https://api.twitter.com/oauth/authorize",
-            accessTokenUrl:  "https://api.twitter.com/oauth/access_token"
-        )
-        let handle = oauthswift?.authorize(
-            withCallbackURL: URL(string: "oauth-swift://oauth-callback/twitter")!,
-            success: { credential, response, parameters in
-                print(credential.oauthToken)
-                print(parameters["user_id"])
-                print("hehh")
-            },
-            failure: { error in
-                print(error.localizedDescription)
-                print("hber")
-            }             
-        )
-        
-       
-    }
-    
 
-    
-    
         
-    
+    }
+
     @IBAction func loginTwitter(_ sender: AnyObject) {
-        
-        
 
     }
 
-    
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
