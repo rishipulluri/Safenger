@@ -7,6 +7,5 @@ target 'Safenger' do
 
   # Pods for Safenger
 
- pod 'AFNetworking'
- pod 'BDBOAuth1Manager'
+ pod 'Firebase/Core'
 end

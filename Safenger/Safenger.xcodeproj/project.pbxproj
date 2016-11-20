@@ -11,13 +11,13 @@
 		147597F71DE10B2E0033E32F /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597F61DE10B2E0033E32F /* DataTableViewCell.swift */; };
 		147597F91DE114E10033E32F /* PotentialHarassmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597F81DE114E10033E32F /* PotentialHarassmentViewController.swift */; };
 		147597FB1DE115040033E32F /* SafeUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147597FA1DE115040033E32F /* SafeUserViewController.swift */; };
+		147597FF1DE165EC0033E32F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 147597FE1DE165EC0033E32F /* GoogleService-Info.plist */; };
 		14DB1FD71DE0E9A8008E1BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */; };
 		14DB1FDC1DE0E9A8008E1BAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDA1DE0E9A8008E1BAB /* Main.storyboard */; };
 		14DB1FDE1DE0E9A8008E1BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */; };
 		14DB1FE11DE0E9A8008E1BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DB1FDF1DE0E9A8008E1BAB /* LaunchScreen.storyboard */; };
 		5A5EEA1ED7CF49AB93548E79 /* Pods_Safenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE6D89042049778B864CB96 /* Pods_Safenger.framework */; };
 		D1CF71B11DE0FDD20010FABD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF71B01DE0FDD20010FABD /* LoginViewController.swift */; };
-		D1CF71B71DE133010010FABD /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF71B61DE133010010FABD /* TwitterClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +25,7 @@
 		147597F61DE10B2E0033E32F /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		147597F81DE114E10033E32F /* PotentialHarassmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotentialHarassmentViewController.swift; sourceTree = "<group>"; };
 		147597FA1DE115040033E32F /* SafeUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeUserViewController.swift; sourceTree = "<group>"; };
+		147597FE1DE165EC0033E32F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14DB1FD31DE0E9A8008E1BAB /* Safenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Safenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DB1FD61DE0E9A8008E1BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14DB1FDB1DE0E9A8008E1BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		AD71F89D9109EBA519D0AF9A /* Pods-Safenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safenger/Pods-Safenger.release.xcconfig"; sourceTree = "<group>"; };
 		D1CF71B01DE0FDD20010FABD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D1CF71B21DE0FF8E0010FABD /* Safenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Safenger.entitlements; sourceTree = "<group>"; };
-		D1CF71B61DE133010010FABD /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 				14DB1FDD1DE0E9A8008E1BAB /* Assets.xcassets */,
 				14DB1FDF1DE0E9A8008E1BAB /* LaunchScreen.storyboard */,
 				14DB1FE21DE0E9A8008E1BAB /* Info.plist */,
-				D1CF71B61DE133010010FABD /* TwitterClient.swift */,
+				147597FE1DE165EC0033E32F /* GoogleService-Info.plist */,
 			);
 			path = Safenger;
 			sourceTree = "<group>";
@@ -175,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14DB1FE11DE0E9A8008E1BAB /* LaunchScreen.storyboard in Resources */,
+				147597FF1DE165EC0033E32F /* GoogleService-Info.plist in Resources */,
 				14DB1FDE1DE0E9A8008E1BAB /* Assets.xcassets in Resources */,
 				14DB1FDC1DE0E9A8008E1BAB /* Main.storyboard in Resources */,
 			);
@@ -239,7 +240,6 @@
 				D1CF71B11DE0FDD20010FABD /* LoginViewController.swift in Sources */,
 				147597F91DE114E10033E32F /* PotentialHarassmentViewController.swift in Sources */,
 				14DB1FD71DE0E9A8008E1BAB /* AppDelegate.swift in Sources */,
-				D1CF71B71DE133010010FABD /* TwitterClient.swift in Sources */,
 				147597F51DE0FEFC0033E32F /* HomeViewController.swift in Sources */,
 				147597F71DE10B2E0033E32F /* DataTableViewCell.swift in Sources */,
 			);

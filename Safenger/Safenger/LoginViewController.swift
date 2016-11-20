@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BDBOAuth1Manager
 
 class LoginViewController: UIViewController  {
     
@@ -20,9 +19,6 @@ class LoginViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TwitterClient(baseURL: twitterBaseUrl as URL!, consumerKey: twitterConsumerKey, consumerSecret: twitterConsumerSecret)
-
-        
        
     }
     
@@ -32,13 +28,7 @@ class LoginViewController: UIViewController  {
         
     
     @IBAction func loginTwitter(_ sender: AnyObject) {
-        TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
-        
-        TwitterClient.sharedInstance.fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: NSURL(string: "cptwitterdemo://oauth") as URL!, scope:nil, success: {(requestToken: (BDBOAuth1Credential?)) -> Void in
-            
-        })  {(_: (Error?)) -> Void in
-            print("error")
-        }
+
     }
 
     
