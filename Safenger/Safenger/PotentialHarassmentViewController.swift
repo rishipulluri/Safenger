@@ -14,6 +14,8 @@ class PotentialHarassmentViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

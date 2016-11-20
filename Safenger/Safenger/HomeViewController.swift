@@ -17,6 +17,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet var segmentedControl: UISegmentedControl!
     var messageObjects: NSArray?
     let applicationDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    var profileImageToPass: UIImage!
+    var usernameToPass: String!
 
     // Instance variables
     let tableViewRowHeight: CGFloat = 60.0
@@ -122,8 +125,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let url = URL(string: objectmessage["img"] as! String)
             let data = try? Data(contentsOf: url!)
             cell.profileImageView.image = UIImage(data: data!)
-        }
-        else {
+            
+            profileImageToPass = cell.profileImageView.image!
+            usernameToPass = cell.nameLabel.text
+        } else {
             
             
             var index = 0
@@ -188,14 +193,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
 
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowUser" {
+            
+            // Obtain the object reference of the destination view controller
+            let safeUserViewController: SafeUserViewController = segue.destination as! SafeUserViewController
+            
+            //Pass the data object to the destination view controller object
+            safeUserViewController.profileImagePassed = profileImageToPass
+            safeUserViewController.usernamePassed = usernameToPass
+        }
     }
-    */
-
 }
