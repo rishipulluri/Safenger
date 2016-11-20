@@ -24,8 +24,8 @@ class LoginViewController: UIViewController  {
         super.viewDidLoad()
         
         oauthswift = OAuth1Swift(
-            consumerKey:    "2nkEy3wkbkFFvDcUCkuCYeIrn",
-            consumerSecret: "rNEf4gA1GSniCr30PwtTeLYwsc58NEzcjVgC7qdwjJwqTjNa7H",
+            consumerKey:    "xvz1evFS4wEEPTGEFPHBog",
+            consumerSecret: "L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg",
             requestTokenUrl: "https://api.twitter.com/oauth/request_token",
             authorizeUrl:    "https://api.twitter.com/oauth/authorize",
             accessTokenUrl:  "https://api.twitter.com/oauth/access_token"
